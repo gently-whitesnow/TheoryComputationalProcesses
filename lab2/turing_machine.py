@@ -151,12 +151,12 @@ class TuringMachine:
 
     def _tape_to_string(self) -> str:
         """
-        Преобразовать ленту в строку, убирая концевые _
+        Преобразовать ленту в строку, убирая концевые λ
 
         Returns:
             Строковое представление ленты
         """
-        # Убираем _ с концов
+        # Убираем λ с концов
         tape_str = ''.join(self.tape).strip('λ')
         return tape_str if tape_str else 'λ'
 
