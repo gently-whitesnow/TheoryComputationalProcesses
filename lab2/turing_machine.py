@@ -1,11 +1,4 @@
 #!/usr/bin/env python3
-"""
-Лабораторная работа №2
-Вариант 21: f(x₁, x₂) = x₁ + x₂ - 1
-
-Симулятор машины Тьюринга
-"""
-
 import sys
 from typing import List, Dict, Tuple, Optional
 
@@ -317,10 +310,6 @@ def write_trace_to_file(filename: str, trace: List[Dict]):
     """
     try:
         with open(filename, 'w', encoding='utf-8') as f:
-            f.write("=" * 70 + "\n")
-            f.write("Трассировка работы машины Тьюринга\n")
-            f.write("Вариант 21: f(x₁, x₂) = x₁ + x₂ - 1\n")
-            f.write("=" * 70 + "\n\n")
 
             for i, step in enumerate(trace):
                 f.write(f"Шаг {i}:\n")
@@ -328,10 +317,6 @@ def write_trace_to_file(filename: str, trace: List[Dict]):
                 f.write(f"{step['pointer']}\n")
                 f.write(f"Команда: {step['command']}\n")
                 f.write("\n")
-
-            f.write("=" * 70 + "\n")
-            f.write("Работа машины Тьюринга завершена успешно\n")
-            f.write("=" * 70 + "\n")
 
     except Exception as e:
         print(f"Ошибка при записи в файл '{filename}': {e}")
