@@ -185,9 +185,7 @@ class MealyAutomaton:
         Вывести трассировку выполнения
         """
         print("\nТрассировка выполнения:")
-        print("-" * 60)
         print(f"{'Состояние':<12} {'Вход':<8} {'След. состояние':<18} {'Выход':<8}")
-        print("-" * 60)
 
         for step in self.trace:
             print(f"{step['state']:<12} {step['input']:<8} "
@@ -214,10 +212,8 @@ def test_automaton():
         'nhhc', 'nkk', 'nzc', 'nmc'
     ]
 
-    print("=" * 70)
     print("Тестирование конечного автомата Мили")
     print("Вариант 7: (n|<b|d>)(h|k)<z|m>c")
-    print("=" * 70)
     print()
 
     for word in test_words:
@@ -226,9 +222,7 @@ def test_automaton():
         print(f"Слово: '{word}'".ljust(20) + f" -> {status}")
 
     # Детальная трассировка для одного примера
-    print("\n" + "=" * 70)
     print("Детальная трассировка для слова 'nhzc':")
-    print("=" * 70)
     automaton.reset()
     result = automaton.process('nhzc')
     automaton.print_trace()
@@ -243,10 +237,8 @@ def main():
     test_automaton()
 
     # Интерактивный режим
-    print("\n" + "=" * 70)
     print("Интерактивный режим")
     print("Введите слово для проверки (или 'exit' для выхода):")
-    print("=" * 70)
 
     automaton = MealyAutomaton()
 
@@ -263,9 +255,9 @@ def main():
             automaton.print_trace()
 
             if result:
-                print(f"\n✓ Слово '{word}' ДОПУСТИМО")
+                print(f"\nСлово '{word}' ДОПУСТИМО")
             else:
-                print(f"\n✗ Слово '{word}' ОТКЛОНЕНО")
+                print(f"\nСлово '{word}' ОТКЛОНЕНО")
 
             print(f"Конечное состояние: {automaton.current_state}")
 
